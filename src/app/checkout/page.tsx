@@ -1,7 +1,7 @@
 'use client';
 
+import { Suspense, useState } from 'react';
 import { useCart } from '@/context/CartContext'; // Custom Cart Context
-import { useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 const countries = ['United States', 'Canada', 'United Kingdom', 'Australia', 'India', 'Pakistan'] as const;
@@ -151,4 +151,10 @@ const Checkout = () => {
   );
 };
 
-export default Checkout;
+const CheckoutWithSuspense = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Checkout />
+  </Suspense>
+);
+
+export default CheckoutWithSuspense;
