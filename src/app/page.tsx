@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import TopSelling from "./components/TopSelling";
 import NewArrivals from "./components/NewArrivals";
 import Reviews from "./components/Reviews";
